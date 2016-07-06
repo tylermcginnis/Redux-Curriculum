@@ -19,10 +19,7 @@ Before I ever start a React app, no matter how complex, I always create a HelloW
 
  * Create a new project or fork this repository
  * npm install the dependencies you'll need (for a basic HelloWorld app). Include ES6+.
-
-  ```npm install --save react react-dom```
-  ```npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-0 css-loader html-webpack-plugin style-loader webpack webpack-dev-server```
-
+  ```npm install --save react react-dom && npm install --save-dev babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-0 css-loader html-webpack-plugin style-loader webpack webpack-dev-server```
  * Create and configure your .babelrc file
  * Create and configure your webpack.config.js file
  * Create an app directory and in your app directory create and configure your index.html file
