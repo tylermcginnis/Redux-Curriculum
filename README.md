@@ -6,13 +6,13 @@ React.js Program's "Redux + Immutable" Curriculum
 ####For more information on React.js Program, [click here](http://reactjsprogram.com)
 
 ##Objective
-Build a functioning "Would you Rather" application using React.js, Redux, Firebase, and Immutable.js. The end result of this project can be found [HERE](http://www.reactjsprogram.com/Redux-Immutable-Project).
+Build a functioning "Would you Rather" application using React.js, Redux, Firebase, and Immutable.js. The end result of this project can be found [HERE](http://www.reactjsprogram.com/Redux-Immutable-Curriculum).
 
 ## Notes
 The goal here is to give you just enough guidance for you to struggle without drowning. Note that the steps below are just suggestions. The ideal situation is you look at the completed project, then you build it. However, if you're not up for such things, feel free to follow the (vague by design) steps below. If you get stuck, all steps have coinciding branches for you to reference as a last case scenario.
 
 ##Step 0: Examine the Final Product
- * Head over [HERE](http://www.reactjsprogram.com/Redux-Immutable-Project) and play around with the final project. Think about how you would separate your different components and functionality.
+ * Head over [HERE](http://www.reactjsprogram.com/Redux-Immutable-Curriculum) and play around with the final project. Think about how you would separate your different components and functionality.
 
 ##Step 1: Set up a HelloWorld Component
 Before I ever start a React app, no matter how complex, I always create a HelloWorld component just to make sure that I've tied everything together properly. I don't expect you to have all this memorized, but do your best to wire up everything by yourself. If you do get stuck you can refer to the 'step1' branch.
@@ -59,3 +59,16 @@ Now that our webpack config is set up properly and we have our HelloWorld app, l
  * Now our initial routes are set up, we need to render those when we call ReactDOM.render. Header over to your `app/index.js` file and instead of rendering `Main`, render your Routes.
  * If you refresh your view you should now see 'Main'. Great! But we should also be seeing 'Home' as well. The reason we're not is because we're not rendering any children components inside of Main. Remember, MainContainer is our main parent route. When we transition to different URLs, different children routes are going to becoming active. We need to render those children routes. Head over to `MainContainer.js` and instead of just rendering 'Main', we want to render 'Main' as well as any children routes that are passed to it (`this.props.children`). Make those changes now.
  * Reload your app and now you should see both Main and Home since our HomeContainer component is our IndexRoute (which becomes active when no other routes 'path' match the URL, in this case we have no other routes, so HomeContainer is always active).
+
+##Step 4: Main and Home Styling
+If you checkout the [final solution](http://www.reactjsprogram.com/Redux-Immutable-Curriculum), you'll notice the basic home page. Our routing is set up so now let's just style the HomeContainer and MainContainer components
+
+ * Create a `components` folder in your `app` folder
+ * Create a `Home` folder in your components folder and create a `Home.js` file inside that `Home` folder
+ * Format and Style your Home component
+ * Add styling/format to your Home component
+ * Create an `index.js` file inside your components folder and export Home.js for easier imports
+ * Now in your `HomeContainer` you need to render your `Home` component rather than the text 'Home'
+ * Right now your App should look like this
+
+<img src="http://www.reactjsprogram.com/images/redux-step4.png" width="400">
