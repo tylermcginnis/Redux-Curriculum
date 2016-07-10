@@ -44,3 +44,18 @@ If you followed my example above, our webpack configurations are super minimal. 
  * Create three variables, `base`, `developmentConfig`, and `productionConfig`. Base has all of the config properties that are shared with with `developmentConfig` and `productionConfig`, and the others have that config settings based on the specific build we're running (prod vs development).
  * Now, we need to export an object that combines our base variable with either `developmentConfig` or `productionConfig`. Use Object.assign to do this.
  * Run both `npm run start` and `npm run production` to make sure everything is still working correctly (your app should still just render 'Hello World!'. Remember, `npm run start` just starts a local server which your files will be served from. `npm run start` should create a `/dist` folder.
+
+##Step 3: Basic Routing
+Now that our webpack config is set up properly and we have our HelloWorld app, let's go ahead and tie in some basic routing with React Router.
+
+ * We're going to use React Router to handle our routing, run `npm install --save react-router` in your project.
+ * Inside of your `app` folder, create a `containers` folder.
+ * Inside that folder create an `index.js` file, a `Main` folder, and a `Home` folder.
+ * Inside your `Main` folder create a `MainContainer.js` file and inside your `Home` folder create a `HomeContainer.js` file.
+ * Now, we're going to use our `index.js` file we made to make our imports easier just like we did in the video. Head over to your `index.js` file and add the proper exports (or MainContainer.js and HomeContainer.js)
+ * Now inside of both `HomeContainer.js` and `MainContainer.js` create a React component which just renders a string or 'Home' or 'Main'.
+ * Now let's set up some basic routing. Inside your `app` folder create a `config` folder and inside of that create a `routes.js` file.
+ * Inside that routes file create declarative Routes which will render `MainContainer` as the main parent route (/) and `HomeContainer` as the `IndexRoute`.
+ * Now our initial routes are set up, we need to render those when we call ReactDOM.render. Header over to your `app/index.js` file and instead of rendering `Main`, render your Routes.
+ * If you refresh your view you should now see 'Main'. Great! But we should also be seeing 'Home' as well. The reason we're not is because we're not rendering any children components inside of Main. Remember, MainContainer is our main parent route. When we transition to different URLs, different children routes are going to becoming active. We need to render those children routes. Head over to `MainContainer.js` and instead of just rendering 'Main', we want to render 'Main' as well as any children routes that are passed to it (`this.props.children`). Make those changes now.
+ * Reload your app and now you should see both Main and Home since our HomeContainer component is our IndexRoute (which becomes active when no other routes 'path' match the URL, in this case we have no other routes, so HomeContainer is always active).
