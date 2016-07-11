@@ -82,3 +82,11 @@ Our navigation bar is going to be fundamental to our application. Even though al
  * Instead of having a Button that pops open a Modal, for now just write 'Modal'
  * Style your navigation component appropriately.
  * Inside of MainContainer import your newly created Navigation component and render it initially passing in `false` for `isAuthed` (test if it works) then pass in `true` and test that your UI is changing based on the `isAuthed` prop.
+
+##Step 6: Designing your Redux state
+Now that we're starting to get into authentication, we're going to start to have state in our application. Before we do that, it's a good idea to have a general idea of what the shape of your application's state is going to look like. This may not be practical in larger applications, but we're going to map out the shape of Firebase, Redux, our Reducers and Actions creators before we continue to work on any future part of the app. If done correctly, this activity will be hugely beneficial when your start to actually build your app.
+
+ * Head back over to the finished app here and really play around with it. Think of all of the different pieces of state that are living and changing in the app.
+ * Create a reduxSchema.js file in your root directory
+ * Fill out this file to be a representation of what your full state tree will be once everything is tied up. You're not going to actually use this file, but you will refer to it when you're building your reducers and actions creators.
+ * Remember if you're struggling, refer to the `step6` branch, just don't use it as a crutch.
