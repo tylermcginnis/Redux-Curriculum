@@ -72,3 +72,13 @@ If you checkout the [final solution](http://www.reactjsprogram.com/Redux-Immutab
  * Right now your App should look like this
 
 <img src="http://www.reactjsprogram.com/images/redux-step4.png" width="400">
+
+##Step 5: Navigation Skeleton
+Our navigation bar is going to be fundamental to our application. Even though all the pieces that it entails won't be set up, in this section you'll go ahead and set up the navigation assuming you'll tie in the rest of the pieces later.
+
+ * In your components folder create a Navigation component which takes in an `isAuthed` property.
+ * Looking at the finished example you'll notice that the navbar changes based on if you're logged in or not. On the left side if you're logged in you'll see a 'Home' link and if you're not you'll see Home and Authenticate. On the right if you're logged in you'll see a button to create a new question as well as a logout button.
+ * Using React Router's `Link` component, create your Navigation component using the following paths as your Links, `/` for home, `/logout`, and `/auth`. Even though these routes aren't created yet, we'll do that later.
+ * Instead of having a Button that pops open a Modal, for now just write 'Modal'
+ * Style your navigation component appropriately.
+ * Inside of MainContainer import your newly created Navigation component and render it initially passing in `false` for `isAuthed` (test if it works) then pass in `true` and test that your UI is changing based on the `isAuthed` prop.
