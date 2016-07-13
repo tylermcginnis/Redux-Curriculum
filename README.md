@@ -176,4 +176,19 @@ Now that our Firebase is initialized, let's go ahead and create some helper meth
  * Create an export a function called saveUser which takes in a user and saves that user to `users/AUTHED-USERS-ID/info` then returns the user.
  * From this point on, all of the weird Webpack/Firebase/etc setup issues are over. So by design these instructions will get less and less detailed. Remember if you get stuck, try to find the solution on your own. If you can't, check out the branch which corresponds with the step. If you're still stuck, ask for help in the Slack channel.
 
+## Step 13: Authenticate!
+Now is our moment we've been prepping for. We're going to authenticate with Firebase and save the user (as well as their authed state), into Redux.
 
+ * Even though we have our `authUser` action creator, that isn't doing anything more than just returning an object. Instead, create an action creator called `fetchAndHandleAuthedUser` which is in charge of authenticating the user, saving the users data into Firebase, then authenticating the user (while saving it) to Redux. To do this step you'll leverage the functions we created last step in auth.js as well as a few new action creators you'll make.
+ * Once you've finished this action creator update your users Reducer so it correctly modifies the state based on the action creators that were invoked.
+ * Now you should have all of your authentication logic encapsulated inside of `fetchAndHandleAuthedUser`, but now we need to actually create the UI which will eventually run that function.
+ * Create a FacebookAuthButton stateless functional component which takes in an `isFetchin` prop as well as an `onAuth` prop.
+ * Now create an `Authenticate` stateless functional component that is going to be the UI for the `/auth` route. It may be a good idea to use the FacebookAuthButton we created in the last step.
+ * Once you've finished that component, you should have a good understanding of what Authenticate needs in order to properly function. So the only step now is to create an AuthenticateContainer which is hooked up to Redux and passes Authenticate everything that it needs. Make sure once you authenticate you redirect the user to the '/results' route, even though it doesn't exist yet.
+ * Now the last step is we need to add the AuthenticateContainer we just created to our routes.js file.
+ * Go ahead and test your code out now. Fix any errors you have and make sure you can route to the /auth route when you click the "Authenticate" button on the home screen.
+ * If you've been following my code you should see that the FacebookAuth button show's "Loading". Why is this? If you look at user.js the initial state that was set has `isFetching` as true. `isFetching` is what the FacebookAuthButton uses to know if it should show 'Loading' or 'Login with Facebook'.
+ * We can fix this with a check in our MainContainer. First, inside of users.js create an action creator which changes `isFetching` to false and update the user's Reducer as well.
+ * Now, import the action creator you just made into MainContainer, don't forget to use `bindActionCreators` or just dispatch the action creator itself.
+ * Now temporarily, call your function which changes `isFetching` to false inside of MainContainer's `componentDidMount` method.
+ * Now when MainContainer mounts, `isFetching` should be changed to true which means that the FacebookAuthButton will display the correct text. To test this, head over to your `/auth` route. If you're uncomfortable with this last step check out the code. If you've understood everything until this point you're doing extremely well. Once you get comfortable with action creators and how they're imported into container components, managing your app state becomes a breeze. Our app is going to get more functionality, but there aren't really a whole lot of "new" things from here on out.
