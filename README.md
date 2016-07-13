@@ -158,7 +158,7 @@ In order to make our app able to have Facebook authentication, there are a few s
  * Now head back to your "Dashboard" and then copy your App ID and App Secret and paste them in the appropriate sections under the URL we went to in the Firebase dashboard earlier.
  * If you followed everything correctly your app should now be able to use Facebook authentication.
 
-## Step 11: Auth Methods
+## Step 11: Firebase Configuration
 
  * Inside your `config` folder create a constants.js file.
  * Here is where we're going to initialize firebase. But before we do that, go ahead and `npm install --save firebase`
@@ -166,5 +166,14 @@ In order to make our app able to have Facebook authentication, there are a few s
  * Inside of your constants.js file import firebase and initialize your app.
  * export two variables from this file. `export const ref = firebase.database().ref()` and `const firebaseAuth = firebase.auth`
  * We'll be importing those variables later to interact with our Firebase database as well as our Firebase Auth module.
+
+## Step 12: Authentication Methods
+Now that our Firebase is initialized, let's go ahead and create some helper methods to assist us with authentication.
+
+ * Inside of `app` create a `helpers` folder then inside of that create a `auth.js` file.
+ * Create and export as default a function called `auth` which uses `firebaseAuth().signInWithPopup` to auth with Firebase.
+ * Create and export a function called `logout` which unauthenticates from Firebase.
+ * Create an export a function called saveUser which takes in a user and saves that user to `users/AUTHED-USERS-ID/info` then returns the user.
+ * From this point on, all of the weird Webpack/Firebase/etc setup issues are over. So by design these instructions will get less and less detailed. Remember if you get stuck, try to find the solution on your own. If you can't, check out the branch which corresponds with the step. If you're still stuck, ask for help in the Slack channel.
 
 
