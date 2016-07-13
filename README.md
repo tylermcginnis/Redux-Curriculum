@@ -139,3 +139,21 @@ Now that Redux is set up properly, we want to create some action creators that w
 
 <img src="http://www.reactjsprogram.com/images/redux-step9.png" width="400">
 
+## Step 10: Prep for Firebase Auth
+In order to make our app able to have Facebook authentication, there are a few steps we need do take.
+
+ * If you haven't already head over to firebase.google.com and make an account
+ * Once you do that go ahead and make a new project and call it whatever you would like.
+ * Once your project is created head to your projects dashboard and click on "Auth" side panel button.
+ * From the "Authentication" page click on "SIGN-IN-METHOD" and then click on Facebook.
+ * Notice we'll need an APP ID as well as an App Secret. We'll get these from Facebook. In the mean time, copy the url that is at the bottom in the gray box it should look something like this "https://YOUR-PROJECT-XXXX.firebaseapp.com/__/auth/handler".
+ * Now head over to [Facebook's Developer's Site](https://developers.facebook.com/) and either sign up or hover over the "My Apps" section in the top right and select "Add a New App" then select Website.
+ * Enter in a name for your app and click "Create a new Facebook App"
+ * Enter your contact email and choose a category.
+ * (Pass the spam filter if needed)
+ * Now when your app is approved in the top right hand corner click on "Skip Quick Start"
+ * Now on the left hand sidebar click on "Add Product"
+ * Then click "Get Started" under the Facebook Auth section.
+ * Now if you still have that URL we copied from Firebase go ahead and paste that in the section titled "Valid OAuth redirect URIs" then click "Save Changes" in the lower right.
+ * Now head back to your "Dashboard" and then copy your App ID and App Secret and paste them in the appropriate sections under the URL we went to in the Firebase dashboard earlier.
+ * If you followed everything correctly your app should now be able to use Facebook authentication.
