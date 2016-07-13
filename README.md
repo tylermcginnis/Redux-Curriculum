@@ -192,3 +192,5 @@ Now is our moment we've been prepping for. We're going to authenticate with Fire
  * Now, import the action creator you just made into MainContainer, don't forget to use `bindActionCreators` or just dispatch the action creator itself.
  * Now temporarily, call your function which changes `isFetching` to false inside of MainContainer's `componentDidMount` method.
  * Now when MainContainer mounts, `isFetching` should be changed to true which means that the FacebookAuthButton will display the correct text. To test this, head over to your `/auth` route. If you're uncomfortable with this last step check out the code. If you've understood everything until this point you're doing extremely well. Once you get comfortable with action creators and how they're imported into container components, managing your app state becomes a breeze. Our app is going to get more functionality, but there aren't really a whole lot of "new" things from here on out.
+
+ ## Step 14:

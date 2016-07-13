@@ -63,6 +63,29 @@ export function fetchAndHandleAuthedUser () {
   }
 }
 
+const initialUserState = {
+  lastUpdated: 0,
+  info: {
+    name: '',
+    uid: '',
+    avatar: '',
+  },
+  decisionsMade: {},
+}
+
+function user (state = initialUserState, action) {
+  switch (action.type) {
+    case FETCHING_USER_SUCCESS :
+      return {
+        ...state,
+        info: action.user,
+        lastUpdated: action.timestamp,
+      }
+    default :
+      return state
+  }
+}
+
 const initialState = {
   isFetching: true,
   error: '',
