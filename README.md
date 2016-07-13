@@ -157,3 +157,14 @@ In order to make our app able to have Facebook authentication, there are a few s
  * Now if you still have that URL we copied from Firebase go ahead and paste that in the section titled "Valid OAuth redirect URIs" then click "Save Changes" in the lower right.
  * Now head back to your "Dashboard" and then copy your App ID and App Secret and paste them in the appropriate sections under the URL we went to in the Firebase dashboard earlier.
  * If you followed everything correctly your app should now be able to use Facebook authentication.
+
+## Step 11: Auth Methods
+
+ * Inside your `config` folder create a constants.js file.
+ * Here is where we're going to initialize firebase. But before we do that, go ahead and `npm install --save firebase`
+ * Now back in your Firebase console select "Add Firebase to your web app" and copy both the config object as well as the firebase.initializeApp invocation.
+ * Inside of your constants.js file import firebase and initialize your app.
+ * export two variables from this file. `export const ref = firebase.database().ref()` and `const firebaseAuth = firebase.auth`
+ * We'll be importing those variables later to interact with our Firebase database as well as our Firebase Auth module.
+
+
