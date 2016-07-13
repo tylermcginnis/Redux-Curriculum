@@ -193,4 +193,10 @@ Now is our moment we've been prepping for. We're going to authenticate with Fire
  * Now temporarily, call your function which changes `isFetching` to false inside of MainContainer's `componentDidMount` method.
  * Now when MainContainer mounts, `isFetching` should be changed to true which means that the FacebookAuthButton will display the correct text. To test this, head over to your `/auth` route. If you're uncomfortable with this last step check out the code. If you've understood everything until this point you're doing extremely well. Once you get comfortable with action creators and how they're imported into container components, managing your app state becomes a breeze. Our app is going to get more functionality, but there aren't really a whole lot of "new" things from here on out.
 
- ## Step 14:
+ ## Step 14: /results View
+Your app should be in the state where authentication works fine but once you're done authenticating you get an error that says "Warning: [react-router] Location "/results" did not match any routes". This is obviously because we haven't set up that route yet. Let's do that now.
+
+ * Create a stateless functional component called Results which just (for now) renders the text "Results"
+ * Create a container component which renders the Results component we created in the previous step.
+ * Set up a route so when you go to `/results` you get the container component created in the previous step.
+ * Your app should be at the point where you can authenticate, and when you do, you get redirected to the `/results` view and the navigation bar changes to be what it should look like when you're authenticated.
