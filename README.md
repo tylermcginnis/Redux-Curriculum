@@ -128,3 +128,14 @@ Now that we've designed both our Firebase and our Redux state, let's go ahead an
  * Now back in the `index.js` file invoke `getRoutes` as a child of `Provider` passing it a blank function which just returns true and the `history` variable we created earlier.
  * Head over [HERE](https://github.com/zalmoxisus/redux-devtools-extension) and download the Redux Dev Tools. Once that's downloaded load up the app and open up the 'Redux' devtools tab. Click on "State" and you should be able to see our `users` state as well as `routing` from React Router Redux.
  * Phew! That was a LOT. But now we're in a great position to create a very nice React/Redux application. Again, memorizing all of the steps isn't as important as understanding them all. If you cheat and look at my code, cool. But if you cheat and look at my code while blindly copy/pasting, not cool. If you have a specific question, I'm always available in the Slack channel.
+
+## Step 9: Auth action creators
+Now that Redux is set up properly, we want to create some action creators that we can eventually invoke once our user authenticates. When the user is browsing the app we're going to rely on Redux to keep track of it that user is authenticated or not.
+
+ * Inside of your users.js Redux module, create an `authUser` action creator which sets an `isAuthed` property on your state to true and saves the authed users `uid` to an `authedId` property on the state.
+ * Create an action creator called `unauthUser` which changes `isAuthed` on the users state to false and resets `authedId` back to an empty string.
+ * Now that we have this `isAuthed` variable living in our state, head over to MainContainer.js and connect your MainContainer component so instead of passing in `true` to the <Navigation /> component, we pass in the true value (which by default should be false.)
+ * Right now your App should look like this
+
+<img src="http://www.reactjsprogram.com/images/redux-step9.png" width="400">
+
