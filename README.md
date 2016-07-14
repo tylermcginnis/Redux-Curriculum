@@ -262,3 +262,23 @@ Now that we have the ability to fetch decisions (and update our Redux state), no
  * Now your app and state tree should look similar to this, notice we've now set a listener as well.
 
 <img src="http://www.reactjsprogram.com/images/redux-step20.png" width="400">
+
+## Step 21: Fetch Users Made Decisions
+You'll notice that on the final version on the `/results` view the UI shows a green line on the left with a checkmark on the right of the Result if the user has taken that decision or a red line (and an empty cirlce) if they haven't. In order to implement that we need to go ahead and fetch every decision that the user has made when the app loads.
+
+ * Head back to your Results component and add a new prop called `decisionsMade`. This prop will be all of the decisions the user has made. Now, in order to know if they've made a particular decision or not, we can look if `props.decisionsMade[decisionId]` is truthy or not. Update the UI to show the checkmark/circle as well as the red or green line.
+ * Because we're now assuming Results is going to receive `decisionsMade`, we actually need to pass those in. Head over to your ResultsContainer and get `decisionsMade` which we'll put on each users object in the `users` module. So again, each user will eventually have a `decisionsMade` property. Make sure you pass `decisionsMade` down to Results.
+ * At this point all we need to do is update the authed users `decisionsMade` property. We'll do this right when the MainComponent mounts.
+ * Head over to your `users` module and create a new Thunk function called `fetchAndAddUsersMadeDecisions` and fill it out to make the appropriate request.
+ * Once that's done go ahead and add it to `fetchAndHandleAuthedUser` so that when a user authenticated, we'll fetch their made decisions.
+ * Now, head over to MainContainer and also call `fetchAndHandleAuthedUser` when the component mounts so we'll have their made decisions on a refresh.
+ * At this point your app should look like this,
+
+<img src="http://www.reactjsprogram.com/images/redux-step21.png" width="400">
+
+## Step 22: Decision View
+We're so close! The second to last thing we need to do is make the Decisions clickable. Obviously the whole point of Would You Rather is that you can choose between two decisions. I'm going to leave this one entirely up to you. Here's the end result for the (what I'm calling) `/decision` view. If you get stuck, there is a branch.
+
+<img src="http://www.reactjsprogram.com/images/redux-step22.png" width="400">
+
+## Step 23: Logout
