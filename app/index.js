@@ -16,7 +16,22 @@ const store = createStore(combineReducers({...reducers, routing: routerReducer})
 const history = syncHistoryWithStore(hashHistory, store)
 
 function checkAuth (nextState, replace) {
-  return true
+  const { isAuthed, isFetching } = store.getState().users
+
+  if (isFetching === true) {
+    return
+  }
+
+  const nextPathName = nextState.location.pathname
+  if (nextPathName === '/' || nextPathName === '/auth') {
+    if (isAuthed === true) {
+      replace('/results')
+    }
+  } else {
+    if (isAuthed !== true) {
+      replace('/auth')
+    }
+  }
 }
 
 ReactDOM.render(
