@@ -8,7 +8,7 @@ const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
 const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
 const REMOVE_FETCHING_USER = 'REMOVE_FETCHING_USER'
 
-function authUser (uid) {
+export function authUser (uid) {
   return {
     type: AUTH_USER,
     uid,
@@ -34,7 +34,7 @@ function fetchingUserFailure (error) {
   }
 }
 
-function fetchingUserSuccess (uid, user, timestamp) {
+export function fetchingUserSuccess (uid, user, timestamp) {
   return {
     type: FETCHING_USER_SUCCESS,
     uid,
