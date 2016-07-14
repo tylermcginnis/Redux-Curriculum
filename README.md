@@ -249,3 +249,17 @@ Implement the following action creators (and Thunks) with their accompanying con
 One thing you may have noticed is that it will be a good idea to know if you're already listening to certain endpoints or not. You can keep this state anywhere you like, but to make future changes easier, I like to keep listeners in their own Redux module. To follow my lead, create a `listeners` modules which has an `addListener` function, then when you add the `decisions` listener in `decisions.js`, also add that to `listeners` so we know what we're listening to.
 
 Now your state tree should look like this ↓. Notice we haven't actually fetched any decisions yet (or set any listeners). That's the next step.
+
+<img src="http://www.reactjsprogram.com/images/redux-step19.png" width="400">
+
+## Step 20: Results UI
+Now that we have the ability to fetch decisions (and update our Redux state), now let's actually do that once the user lands on `/results` and we haven't fetched those already.
+
+ * In your Results component update the component to take in in the following props, and neatly shows the Results to the view. `isFetching`, `decisions`, `error`. If you're following along with my code you'll notice that I installed `react-loader` to show a nice spinner when the data is loading. Feel free to do that as well.
+ * Now that the component is built you should be thinking that we need some way to get data to this component - which means we should create a container component which is connected to Redux. Do that now and pass Results the data it needs.
+ * If you're feeling fancy make it so you only fetch decisions if they either haven't been fetched already or they're "stale" meaning it's beena  while since they've been fetched.
+ * Also if you're feeling extra fancy go ahead and make it so that when you fetch a new decision it takes the author of that decision and caches that user under Redux.
+ * Now your app and state tree should look similar to this, notice we've now set a listener as well.
+
+
+<img src="http://www.reactjsprogram.com/images/redux-step20.png" width="400">

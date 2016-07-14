@@ -7,6 +7,15 @@ const FETCHING_USER = 'FETCHING_USER'
 const FETCHING_USER_FAILURE = 'FETCHING_USER_FAILURE'
 const FETCHING_USER_SUCCESS = 'FETCHING_USER_SUCCESS'
 const REMOVE_FETCHING_USER = 'REMOVE_FETCHING_USER'
+const ADD_USER = 'ADD_USER'
+
+export function addUser (user) {
+  return {
+    type: ADD_USER,
+    user,
+    lastUpdated: Date.now(),
+  }
+}
 
 export function authUser (uid) {
   return {
@@ -136,6 +145,17 @@ export default function users (state = initialState, action) {
         ...state,
         isFetching: false,
       }
+    case ADD_USER :
+      return typeof state[action.user.uid] !== 'undefined'
+        ? state
+        : {
+          ...state,
+          [action.user.uid]: {
+            ...state[action.user.uid],
+            lastUpdated: action.lastUpdated,
+            info: action.user,
+          },
+        }
     default :
       return state
   }

@@ -66,3 +66,9 @@ html, body {
 .darkBtn:hover {
   background: #1877E6
 }
+
+.header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 100;
+}
