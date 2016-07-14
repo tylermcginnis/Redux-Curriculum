@@ -261,5 +261,4 @@ Now that we have the ability to fetch decisions (and update our Redux state), no
  * Also if you're feeling extra fancy go ahead and make it so that when you fetch a new decision it takes the author of that decision and caches that user under Redux.
  * Now your app and state tree should look similar to this, notice we've now set a listener as well.
 
-
 <img src="http://www.reactjsprogram.com/images/redux-step20.png" width="400">

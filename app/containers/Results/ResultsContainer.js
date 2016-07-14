@@ -10,7 +10,6 @@ const ResultsContainer = React.createClass({
     error: PropTypes.string.isRequired,
     decisions: PropTypes.array.isRequired,
     lastUpdated: PropTypes.number.isRequired,
-    decisionsMade: PropTypes.object.isRequired,
     setAndHandleDecisionsListener: PropTypes.func.isRequired,
   },
   contextTypes: {
@@ -21,17 +20,12 @@ const ResultsContainer = React.createClass({
       this.props.setAndHandleDecisionsListener()
     }
   },
-  handleToDecide (decisionId) {
-    this.context.router.push('/decide/' + decisionId)
-  },
   render () {
     return (
       <Results
         isFetching={this.props.isFetching}
         error={this.props.error}
-        decisionsMade={this.props.decisionsMade}
-        decisions={this.props.decisions}
-        onToDecide={this.handleToDecide} />
+        decisions={this.props.decisions} />
     )
   },
 })
@@ -39,7 +33,6 @@ const ResultsContainer = React.createClass({
 function mapStateToProps ({decisions, users}) {
   const decs = decisions.decisions
   return {
-    decisionsMade: users[users.authedId].decisionsMade,
     isFetching: decisions.isFetching,
     lastUpdated: decisions.lastUpdated,
     decisions: Object.keys(decs)

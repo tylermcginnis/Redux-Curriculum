@@ -7,8 +7,6 @@ Results.propTypes = {
   isFetching: PropTypes.bool.isRequired,
   decisions: PropTypes.array.isRequired,
   error: PropTypes.string.isRequired,
-  decisionsMade: PropTypes.object.isRequired,
-  onToDecide: PropTypes.func.isRequired,
 }
 
 export default function Results (props) {
@@ -28,7 +26,6 @@ export default function Results (props) {
         return (
          <div
           className={decisionContainer}
-          style={{borderLeftColor: props.decisionsMade[id] ? '#66C8EB': '#E73130'}}
           key={id}>
             <div>
               <div className={title}>{decision.title}</div>
