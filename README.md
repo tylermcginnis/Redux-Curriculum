@@ -219,3 +219,12 @@ So far so good. But now we want to set up some authentication checks with React 
  * Next, if the path name isn't `/` or `/auth` and the user is not authenticated, then take them to `/auth`. This protects any routes that aren't `/` and `/auth` and will redirect the user to `/auth` instead.
  * Now head over to `routes.js` where `getRoutes` is defined and add `checkAuth` as a prop on all of the routes you want to run `checkAuth` logic on. I have it on `/auth`, `/results`, and the IndexRoute.
  * Now if everything is working you should only be able to access specific routes based on your auth state.
+
+## Step 17: Modal Module
+Next step is to make it so you can post a new "wouldYouRather" question. To do this, let's first start with our modal Redux module. As always, it's a good idea to start with Redux when you're implementing a feature as the most important aspect of your application is usually how your app's state will change with the new feature.
+
+ * Create a `modal.js` file in `redux/modules`. If you're using an `index.js` file for easier imports make sure you add `modal.js` to that file.
+ * Create and implement three action creators, `openModal`, `closeModal`, and `updateDecisionText` with their accompanying constants and switch statements in the reducer.
+ * Create, impelment, and export a Redux Thunk action creator called `saveAndCloseModal`.
+ * If you haven't already finish `modal.js` by adding some initial state to your reducer and anything else you think you'll need for this module.
+ * If everything worked you should now see your initial `modal` state in Redux dev tools.
