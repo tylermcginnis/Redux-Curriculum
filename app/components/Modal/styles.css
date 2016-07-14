@@ -1,0 +1,58 @@
+.newDecisionTop {
+  background: #fff;
+  padding: 11px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #1877E6;
+  font-size: 23px;
+  font-weight: 100;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.newDecisionInputContainer {
+  composes: baseTextAreaContainer from 'sharedStyles/styles.css';
+}
+
+.newDecisionInput {
+  composes: baseTextArea from 'sharedStyles/styles.css';
+  border-width: 0;
+}
+
+.darkBtn {
+  composes: darkBtn from 'sharedStyles/styles.css';
+  text-decoration: none;
+}
+
+.submitDecisionBtn {
+  composes: darkBtn;
+  margin: 0px auto;
+  width: 150px;
+  text-align: center;
+  display: block;
+}
+
+.submitDecisionBtn:disabled {
+  background: #C6C6C6;
+  border: 1px solid #C6C6C6;
+}
+
+.or {
+  text-align: center;
+  font-size: 25px;
+  color: #a4a4a4;
+}
+
+.titleInput {
+  composes: baseTextArea from 'sharedStyles/styles.css';
+  height: 25px;
+  border-width: 0;
+}
+
+.titleContainer {
+  composes: newDecisionInputContainer;
+  height: 40px;
+}

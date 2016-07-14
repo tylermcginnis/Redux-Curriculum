@@ -228,3 +228,6 @@ Next step is to make it so you can post a new "wouldYouRather" question. To do t
  * Create, impelment, and export a Redux Thunk action creator called `saveAndCloseModal`.
  * If you haven't already finish `modal.js` by adding some initial state to your reducer and anything else you think you'll need for this module.
  * If everything worked you should now see your initial `modal` state in Redux dev tools.
+
+## Step 18: Modal UI
+Now that our Modal Redux module is set up, we just need to implement the UI so we can actually submit a new decision. The only tip for this one is that I use `react-modal` from NPM. We've done all of these steps a few times now so start to venture out more on your own. Check the branch if you get stuck.
