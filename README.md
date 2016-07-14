@@ -231,3 +231,21 @@ Next step is to make it so you can post a new "wouldYouRather" question. To do t
 
 ## Step 18: Modal UI
 Now that our Modal Redux module is set up, we just need to implement the UI so we can actually submit a new decision. The only tip for this one is that I use `react-modal` from NPM. We've done all of these steps a few times now so start to venture out more on your own. Check the branch if you get stuck.
+
+## Step 19: Fetch Decisions
+At this point you should be able to submit decisions to Firebase and have them persisted. The problem now is we want to go ahead and fetch those decisions, set a listener so we'll be aware if they change, then show those decisions to the view in list on the '/results' view. In this section we'll build our the decisions modules which will handle all of our decisions state. We'll also include a Thunk function which will make the request to Firebase and set up the listener.
+
+Again, I'll tell you the action creators (and Thunks) that I created, and you can choose to follow my lead or create your own path. The biggest thing to remember is that at this point, really understand the shape of your decisions state and understand how that state can be modified.If you understand those two things, creating the action creators which modify the state will be easier.
+
+Implement the following action creators (and Thunks) with their accompanying constants and items in the decisions reducer.
+
+ * settingDecisionsListener
+ * settingDecisionsListenerError
+ * settingDecisionsListenerSuccess
+ * setAndHandleDecisionsListener (Thunk for ^ three action creators)
+ * addDecision
+ * fetchAndHandleSingleDecision (Thunk for addDecision)
+
+One thing you may have noticed is that it will be a good idea to know if you're already listening to certain endpoints or not. You can keep this state anywhere you like, but to make future changes easier, I like to keep listeners in their own Redux module. To follow my lead, create a `listeners` modules which has an `addListener` function, then when you add the `decisions` listener in `decisions.js`, also add that to `listeners` so we know what we're listening to.
+
+Now your state tree should look like this ↓. Notice we haven't actually fetched any decisions yet (or set any listeners). That's the next step.
