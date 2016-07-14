@@ -118,6 +118,13 @@ export function addAndHandleDecision (decisionId, option, switchingDecision) {
   }
 }
 
+export function logoutAndUnauth () {
+  return function (dispatch) {
+    logout()
+    dispatch(unauthUser())
+  }
+}
+
 const initialUserState = {
   lastUpdated: 0,
   info: {

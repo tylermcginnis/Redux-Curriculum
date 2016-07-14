@@ -282,3 +282,4 @@ We're so close! The second to last thing we need to do is make the Decisions cli
 <img src="http://www.reactjsprogram.com/images/redux-step22.png" width="400">
 
 ## Step 23: Logout
+Last but not least, we need to hook up our `Logout` button to actually unauthenticate us. At this point you should have the hang of this. I'm going to leave this one up to you as well. Check out the branch if you get stuck.

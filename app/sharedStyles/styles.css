@@ -72,3 +72,7 @@ html, body {
   font-size: 40px;
   font-weight: 100;
 }
+
+.center {
+  text-align: center;
+}
