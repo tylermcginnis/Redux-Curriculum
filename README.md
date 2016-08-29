@@ -43,7 +43,7 @@ If you followed my example above, our webpack configurations are super minimal. 
  * Back in your webpack.config.babel.js file create a productionPlugin variable which uses Webpack's DefinePlugin property to set `process.env.NODE_ENV` to production. This is critical to have fast performing code in production.
  * Create three variables, `base`, `developmentConfig`, and `productionConfig`. Base has all of the config properties that are shared with with `developmentConfig` and `productionConfig`, and the others have that config settings based on the specific build we're running (prod vs development).
  * Now, we need to export an object that combines our base variable with either `developmentConfig` or `productionConfig`. Use Object.assign to do this.
- * Run both `npm run start` and `npm run production` to make sure everything is still working correctly (your app should still just render 'Hello World!'. Remember, `npm run start` just starts a local server which your files will be served from. `npm run start` should create a `/dist` folder.
+ * Run both `npm run start` and `npm run production` to make sure everything is still working correctly (your app should still just render 'Hello World!'. Remember, `npm run start` just starts a local server which your files will be served from. `npm run production` should create a `/dist` folder.
 
 ##Step 3: Basic Routing
 Now that our webpack config is set up properly and we have our HelloWorld app, let's go ahead and tie in some basic routing with React Router.
