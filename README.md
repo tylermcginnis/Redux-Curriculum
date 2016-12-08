@@ -1,4 +1,4 @@
-<img src="http://www.reactjsprogram.com/images/reactjsprogram-500.png" width="250" align="right">
+<img src="https://cloud.githubusercontent.com/assets/2933430/21000144/6e6cfa86-bcd6-11e6-950c-149059841f19.png" width="250" align="right">
 
 React.js Program's "Redux + Immutable" Curriculum
 ========
@@ -71,7 +71,7 @@ If you checkout the [final solution](http://www.reactjsprogram.com/Redux-Immutab
  * Now in your `HomeContainer` you need to render your `Home` component rather than the text 'Home'
  * Right now your App should look like this
 
-<img src="http://www.reactjsprogram.com/images/redux-step4.png" width="400">
+<img src="https://cloud.githubusercontent.com/assets/2933430/21000145/6e6e9878-bcd6-11e6-87a7-4eb47f040658.png" width="400">
 
 ##Step 5: Navigation Skeleton
 Our navigation bar is going to be fundamental to our application. Even though all the pieces that it entails won't be set up, in this section you'll go ahead and set up the navigation assuming you'll tie in the rest of the pieces later.
@@ -137,7 +137,7 @@ Now that Redux is set up properly, we want to create some action creators that w
  * Now that we have this `isAuthed` variable living in our state, head over to MainContainer.js and connect your MainContainer component so instead of passing in `true` to the <Navigation /> component, we pass in the true value (which by default should be false.)
  * Right now your App should look like this
 
-<img src="http://www.reactjsprogram.com/images/redux-step9.png" width="400">
+<img src="https://cloud.githubusercontent.com/assets/2933430/21000146/6e701de2-bcd6-11e6-9562-f155f70698d8.png" width="400">
 
 ## Step 10: Prep for Firebase Auth
 In order to make our app able to have Facebook authentication, there are a few steps we need do take.
@@ -250,7 +250,7 @@ One thing you may have noticed is that it will be a good idea to know if you're 
 
 Now your state tree should look like this ↓. Notice we haven't actually fetched any decisions yet (or set any listeners). That's the next step.
 
-<img src="http://www.reactjsprogram.com/images/redux-step19.png" width="400">
+<img src="https://cloud.githubusercontent.com/assets/2933430/21000147/6e7187fe-bcd6-11e6-8968-65bcb654d4b1.png" width="400">
 
 ## Step 20: Results UI
 Now that we have the ability to fetch decisions (and update our Redux state), now let's actually do that once the user lands on `/results` and we haven't fetched those already.
@@ -261,7 +261,7 @@ Now that we have the ability to fetch decisions (and update our Redux state), no
  * Also if you're feeling extra fancy go ahead and make it so that when you fetch a new decision it takes the author of that decision and caches that user under Redux.
  * Now your app and state tree should look similar to this, notice we've now set a listener as well.
 
-<img src="http://www.reactjsprogram.com/images/redux-step20.png" width="400">
+<img src="https://cloud.githubusercontent.com/assets/2933430/21000148/6e85b526-bcd6-11e6-8cee-c75fae7ec32b.png" width="400">
 
 ## Step 21: Fetch Users Made Decisions
 You'll notice that on the final version on the `/results` view the UI shows a green line on the left with a checkmark on the right of the Result if the user has taken that decision or a red line (and an empty cirlce) if they haven't. In order to implement that we need to go ahead and fetch every decision that the user has made when the app loads.
@@ -274,12 +274,12 @@ You'll notice that on the final version on the `/results` view the UI shows a gr
  * Now, head over to MainContainer and also call `fetchAndHandleAuthedUser` when the component mounts so we'll have their made decisions on a refresh.
  * At this point your app should look like this,
 
-<img src="http://www.reactjsprogram.com/images/redux-step21.png" width="400">
+<img src="https://cloud.githubusercontent.com/assets/2933430/21000149/6e87d6b2-bcd6-11e6-8874-117d0d977f36.png" width="400">
 
 ## Step 22: Decision View
 We're so close! The second to last thing we need to do is make the Decisions clickable. Obviously the whole point of Would You Rather is that you can choose between two decisions. I'm going to leave this one entirely up to you. Here's the end result for the (what I'm calling) `/decision` view. If you get stuck, there is a branch.
 
-<img src="http://www.reactjsprogram.com/images/redux-step22.png" width="400">
+<img src="https://cloud.githubusercontent.com/assets/2933430/21000152/6e8e47c2-bcd6-11e6-9617-d3bdcfe61bff.png" width="400">
 
 ## Step 23: Logout
 Last but not least, we need to hook up our `Logout` button to actually unauthenticate us. At this point you should have the hang of this. I'm going to leave this one up to you as well. Check out the branch if you get stuck.
@@ -287,4 +287,4 @@ Last but not least, we need to hook up our `Logout` button to actually unauthent
 ## Congrats!
 If you got through this, great job. If you're reading this and you've made it this far, be proud. This was a pretty advanced project. Take a look at my code and compare to what we did differently.
 
-<img src='http://www.reactjsprogram.com/images/tyler-mcginnis.png' width="100px" align="left"/> Suggestion or just want to say thanks? You can find me on Twitter at [@tylermcginnis33](http://twitter.com/tylermcginnis33)
+<img src='https://cloud.githubusercontent.com/assets/2933430/21000153/6e9fa846-bcd6-11e6-9e09-2e6bb868f71c.png' width="100px" align="left"/> Suggestion or just want to say thanks? You can find me on Twitter at [@tylermcginnis33](http://twitter.com/tylermcginnis33)
