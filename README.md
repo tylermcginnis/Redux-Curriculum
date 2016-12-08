@@ -287,4 +287,4 @@ Last but not least, we need to hook up our `Logout` button to actually unauthent
 ## Congrats!
 If you got through this, great job. If you're reading this and you've made it this far, be proud. This was a pretty advanced project. Take a look at my code and compare to what we did differently.
 
-<img src='https://cloud.githubusercontent.com/assets/2933430/21000153/6e9fa846-bcd6-11e6-9e09-2e6bb868f71c.png' width="100px" align="left"/> Suggestion or just want to say thanks? You can find me on Twitter at [@tylermcginnis33](http://twitter.com/tylermcginnis33)
+<img src='https://cloud.githubusercontent.com/assets/2933430/21000153/6e9fa846-bcd6-11e6-9e09-2e6bb868f71c.png' width="200px" align="left"/> Suggestion or just want to say thanks? You can find me on Twitter at [@tylermcginnis33](http://twitter.com/tylermcginnis33)
