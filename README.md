@@ -3,18 +3,18 @@
 React.js Program's "Redux + Immutable" Curriculum
 ========
 
-####For more information on React.js Program, [click here](http://reactjsprogram.com)
+#### For more information on React.js Program, [click here](http://reactjsprogram.com)
 
-##Objective
+## Objective
 Build a functioning "Would you Rather" application using React.js, Redux, Firebase, and Immutable.js. The end result of this project can be found [HERE](https://reactjsprogram.github.io/Redux-Immutable-Curriculum).
 
 ## Notes
 The goal here is to give you just enough guidance for you to struggle without drowning. Note that the steps below are just suggestions. The ideal situation is you look at the completed project, then you build it. However, if you're not up for such things, feel free to follow the (vague by design) steps below. If you get stuck, all steps have coinciding branches for you to reference as a last case scenario.
 
-##Step 0: Examine the Final Product
+## Step 0: Examine the Final Product
  * Head over [HERE](https://reactjsprogram.github.io/Redux-Immutable-Curriculum) and play around with the final project. Think about how you would separate your different components and functionality.
 
-##Step 1: Set up a HelloWorld Component
+## Step 1: Set up a HelloWorld Component
 Before I ever start a React app, no matter how complex, I always create a HelloWorld component just to make sure that I've tied everything together properly. I don't expect you to have all this memorized, but do your best to wire up everything by yourself. If you do get stuck you can refer to the 'step1' branch.
 
  * Create a new project or fork this repository
@@ -32,7 +32,7 @@ Before I ever start a React app, no matter how complex, I always create a HelloW
  * Add a `start` command to your scripts property in package.json which runs `webpack-dev-server`
  * Run `npm run start` from your terminal then check `localhost:8080` to make sure everything is rendering correctly
 
-##Step 2: Improve Webpack
+## Step 2: Improve Webpack
 If you followed my example above, our webpack configurations are super minimal. Let's go ahead and beef them up a bit by adding CSS Module source maps, path file resolving, source maps, Hot Module Replacement, and a production build.
 
  * We're going to need babel-preset-react-hmre, so npm install that as a dev dependency.
@@ -45,7 +45,7 @@ If you followed my example above, our webpack configurations are super minimal. 
  * Now, we need to export an object that combines our base variable with either `developmentConfig` or `productionConfig`. Use Object.assign to do this.
  * Run both `npm run start` and `npm run production` to make sure everything is still working correctly (your app should still just render 'Hello World!'. Remember, `npm run start` just starts a local server which your files will be served from. `npm run production` should create a `/dist` folder.
 
-##Step 3: Basic Routing
+## Step 3: Basic Routing
 Now that our webpack config is set up properly and we have our HelloWorld app, let's go ahead and tie in some basic routing with React Router.
 
  * We're going to use React Router to handle our routing, run `npm install --save react-router` in your project.
@@ -73,7 +73,7 @@ If you checkout the [final solution](http://www.reactjsprogram.com/Redux-Immutab
 
 <img src="https://cloud.githubusercontent.com/assets/2933430/21000145/6e6e9878-bcd6-11e6-87a7-4eb47f040658.png" width="400">
 
-##Step 5: Navigation Skeleton
+## Step 5: Navigation Skeleton
 Our navigation bar is going to be fundamental to our application. Even though all the pieces that it entails won't be set up, in this section you'll go ahead and set up the navigation assuming you'll tie in the rest of the pieces later.
 
  * In your components folder create a Navigation component which takes in an `isAuthed` property.
@@ -83,7 +83,7 @@ Our navigation bar is going to be fundamental to our application. Even though al
  * Style your navigation component appropriately.
  * Inside of MainContainer import your newly created Navigation component and render it initially passing in `false` for `isAuthed` (test if it works) then pass in `true` and test that your UI is changing based on the `isAuthed` prop.
 
-##Step 6: Designing your Redux State
+## Step 6: Designing your Redux State
 Now that we're starting to get into authentication, we're going to start to have state in our application. Before we do that, it's a good idea to have a general idea of what the shape of your application's state is going to look like. This may not be practical in larger applications, but we're going to map out the shape of Firebase, Redux, our Reducers and Actions creators before we continue to work on any future part of the app. If done correctly, this activity will be hugely beneficial when your start to actually build your app.
 
  * Head back over to the finished app here and really play around with it. Think of all of the different pieces of state that are living and changing in the app.
@@ -91,7 +91,7 @@ Now that we're starting to get into authentication, we're going to start to have
  * Fill out this file to be a representation of what your full state tree will be once everything is tied up. You're not going to actually use this file, but you will refer to it when you're building your reducers and actions creators.
  * Remember if you're struggling, refer to the `step6` branch, just don't use it as a crutch.
 
-##Step 7: Desigining your Firebase Schema
+## Step 7: Desigining your Firebase Schema
 Now we're going to do exactly what we did in Step 6, but instead we're going to do it for Firebase. Reflect on the difference we talked about between a Firebase schema and a Redux Schema.
 
  * Create a firebaseSchema.js file and add a representation of what your Firebase schema will look like. Again this will just be for reference only. Don't be afraid to screw it up the first time. It usually takes a few attempts to get it right.
