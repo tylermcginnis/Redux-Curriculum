@@ -6,13 +6,13 @@ TylerMcGinnis.com's Redux Curriculum
 #### For more information on this course, [click here](https://tylermcginnis.com/courses/redux)
 
 ## Objective
-Build a functioning "Would you Rather" application using React.js, Redux, Firebase, and Immutable.js. The end result of this project can be found [HERE](https://tylermcginnis.github.io/Redux-Immutable-Curriculum).
+Build a functioning "Would you Rather" application using React.js, Redux, Firebase, and Immutable.js. The end result of this project can be found [HERE](https://tylermcginnis.com/Redux-Curriculum).
 
 ## Notes
 The goal here is to give you just enough guidance for you to struggle without drowning. Note that the steps below are just suggestions. The ideal situation is you look at the completed project, then you build it. However, if you're not up for such things, feel free to follow the (vague by design) steps below. If you get stuck, all steps have coinciding branches for you to reference as a last case scenario.
 
 ## Step 0: Examine the Final Product
- * Head over [HERE](https://tylermcginnis.github.io/Redux-Immutable-Curriculum) and play around with the final project. Think about how you would separate your different components and functionality.
+ * Head over [HERE](https://tylermcginnis.com/Redux-Curriculum) and play around with the final project. Think about how you would separate your different components and functionality.
 
 ## Step 1: Set up a HelloWorld Component
 Before I ever start a React app, no matter how complex, I always create a HelloWorld component just to make sure that I've tied everything together properly. I don't expect you to have all this memorized, but do your best to wire up everything by yourself. If you do get stuck you can refer to the 'step1' branch.
