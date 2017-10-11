@@ -92,6 +92,39 @@ Now that we're starting to get into authentication, we're going to start to have
  * Remember if you're struggling, refer to the `step6` branch, just don't use it as a crutch.
 
 ##Step 7: Desigining your Firebase Schema
- Now we're going to do exactly what we did in Step 6, but instead we're going to do it for Firebase. Reflect on the difference we talked about between a Firebase schema and a Redux Schema.
+Now we're going to do exactly what we did in Step 6, but instead we're going to do it for Firebase. Reflect on the difference we talked about between a Firebase schema and a Redux Schema.
 
  * Create a firebaseSchema.js file and add a representation of what your Firebase schema will look like. Again this will just be for reference only. Don't be afraid to screw it up the first time. It usually takes a few attempts to get it right.
+
+## Step 8: Hooking up Redux
+Now that we've designed both our Firebase and our Redux state, let's go ahead and hook up Redux as well as create our first users module with Redux to keep track of all of the user's state as well as the currently authed user.
+
+ * Create the following path under your `app` folder, `redux/modules`
+ * Inside of `modules` create a `users.js` file.
+ * Create a users reducer which for now just returns the initial state under the default switch case.
+ * Inside of `modules` create an index.js file. This file will export all of our reducers. For now, just export the users reducer which you just created.
+ * Now head over to your `app/index.js` in order to hook up Redux.
+ * Instead of waiting until later to hook up Redux dev tools as well as React Router Redux, we're going to do it all now.
+ * `npm install --save react-router-redux redux-thunk redux react-redux`
+ * First thing we need to do is import the neccessary properties. This can get a bit hairy so I'll offer some more help through the next few steps.
+ * ```
+    import { createStore, applyMiddleware, compose, combineReducers } from 'redux'
+    import { Provider } from 'react-redux'
+    import thunk from 'redux-thunk'
+    import { routerReducer, syncHistoryWithStore } from 'react-router-redux'
+    import * as reducers from 'redux/modules'
+   ```
+ * Now that we have everything we need, let's go ahead and create our store.
+ ```
+  const store = createStore(combineReducers({...reducers, routing: routerReducer}), compose(
+    applyMiddleware(thunk),
+    window.devToolsExtension ? window.devToolsExtension() : (f) => f
+  ))
+ ```
+ * Just a refesher of what's going on above, we use combineReducers in order to be able to merge React Router Redux's `routerReducer` with our own reducers. We also use applyMiddleware to make it possible for us to use Redux Thunks in our application.
+ * Next, we need to pass `syncHistoryWithStore` but React Router's hashHistory and our store we created in order to create a new history for us. Don't forget to import hashHistory.
+ * Now, instead of just rendering our routes, we want to render Redux's Provider passint it our store we created.
+ * Nested inside of the Provider is going to be our Routes, however, we need to pass our new history that we created a few steps ago to our Routes to use rather than hashHistory. Head over to `routes.js` and instead of returning routes, return a getRoutes function which takes in an empty (for now) `checkAuth` function as well as our `history` variable.
+ * Now back in the `index.js` file invoke `getRoutes` as a child of `Provider` passing it a blank function which just returns true and the `history` variable we created earlier.
+ * Head over [HERE](https://github.com/zalmoxisus/redux-devtools-extension) and download the Redux Dev Tools. Once that's downloaded load up the app and open up the 'Redux' devtools tab. Click on "State" and you should be able to see our `users` state as well as `routing` from React Router Redux.
+ * Phew! That was a LOT. But now we're in a great position to create a very nice React/Redux application. Again, memorizing all of the steps isn't as important as understanding them all. If you cheat and look at my code, cool. But if you cheat and look at my code while blindly copy/pasting, not cool. If you have a specific question, I'm always available in the Slack channel.
